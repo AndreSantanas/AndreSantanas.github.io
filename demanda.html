@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem</title>
+    <link rel="stylesheet" href="./css/styles2.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Logo do lado esquerdo -->
+        <img src="./images/sesi.png" alt="Logo Esquerda" class="logo left-logo">
+        
+        <!-- Faixa amarela no meio -->
+        <div class="secondary-accent-bar"></div>
+    
+        <!-- Logo do lado direito -->
+        <img src="./images/menu.png" alt="Logo Direita" class="logo right-logo">
+</header>
+<main>
+    <section class="search-section">
+        <h1>Demanda Alimentar</h1>
+        <div class="search-container">
+            <label for="food-search">Nome do Alimento:</label>
+            <input type="text" id="food-search" placeholder="Digite o nome do alimento...">
+        </div>
+        <table class="results-table" id="results-table">
+            <thead>
+                <tr>
+                    <th>Data</th>
+                    <th>Nome do Alimento</th>
+                    <th>Quantidade</th>
+                    <th>Pessoas</th>
+                </tr>
+            </thead>
+            <tbody id="results-body">
+                <!-- Resultados serão inseridos aqui dinamicamente -->
+            </tbody>
+        </table>
+        <div class="no-results" id="no-results">Nenhum resultado encontrado.</div>
+    </section>
+</main>
+
+
+<script>
+    const records = [
+        // Registros de Arroz
+        { date: "01/12/2024", food: "Arroz", quantity: "5 Kg", people: 30 },
+        { date: "02/12/2024", food: "Arroz", quantity: "6 Kg", people: 35 },
+        { date: "03/12/2024", food: "Arroz", quantity: "7 Kg", people: 40 },
+        { date: "04/12/2024", food: "Arroz", quantity: "8 Kg", people: 50 },
+        { date: "05/12/2024", food: "Arroz", quantity: "9 Kg", people: 60 },
+
+        // Registros de Pão com Hambúrguer
+        { date: "01/12/2024", food: "Pão com Hambúrguer", quantity: "50 Unidades", people: 25 },
+        { date: "02/12/2024", food: "Pão com Hambúrguer", quantity: "60 Unidades", people: 30 },
+        { date: "03/12/2024", food: "Pão com Hambúrguer", quantity: "40 Unidades", people: 20 },
+        { date: "04/12/2024", food: "Pão com Hambúrguer", quantity: "70 Unidades", people: 35 },
+        { date: "05/12/2024", food: "Pão com Hambúrguer", quantity: "80 Unidades", people: 40 },
+
+        // Registros de Suco de Laranja
+        { date: "01/12/2024", food: "Suco de Laranja", quantity: "10 Litros", people: 50 },
+        { date: "02/12/2024", food: "Suco de Laranja", quantity: "15 Litros", people: 60 },
+        { date: "03/12/2024", food: "Suco de Laranja", quantity: "20 Litros", people: 70 },
+        { date: "04/12/2024", food: "Suco de Laranja", quantity: "25 Litros", people: 80 },
+        { date: "05/12/2024", food: "Suco de Laranja", quantity: "30 Litros", people: 90 },
+    ];
+
+    const input = document.getElementById("food-search");
+    const resultsBody = document.getElementById("results-body");
+    const resultsTable = document.getElementById("results-table");
+    const noResults = document.getElementById("no-results");
+
+    // Função para renderizar os resultados na tabela
+    function renderResults(filter = "") {
+        const filterTrimmed = filter.trim().toLowerCase();
+        resultsBody.innerHTML = ""; // Limpa a tabela
+
+        if (filterTrimmed === "") {
+            resultsTable.style.display = "none";
+            noResults.style.display = "none";
+            return;
+        }
+
+        const filteredRecords = records.filter(record =>
+            record.food.toLowerCase().includes(filterTrimmed)
+        );
+
+        if (filteredRecords.length === 0) {
+            resultsTable.style.display = "none";
+            noResults.style.display = "block";
+            return;
+        }
+
+        filteredRecords.forEach(record => {
+            const row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${record.date}</td>
+                <td>${record.food}</td>
+                <td>${record.quantity}</td>
+                <td>${record.people}</td>
+            `;
+            resultsBody.appendChild(row);
+        });
+
+        resultsTable.style.display = "table";
+        noResults.style.display = "none";
+    }
+
+    // Evento de entrada para filtrar resultados
+    input.addEventListener("input", (e) => {
+        renderResults(e.target.value);
+    });
+</script>
+
+    <footer class="footer">
+        <button onclick="window.location.href='inicialc.html'">Voltar</button>
+    </footer>
+    <script src="js/app.js"></script>
+    <style>
+.search-section {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px 30px;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: -190px;
+    height: 400px; /* Altura fixa da seção */
+    overflow-y: auto; /* Adiciona rolagem vertical se o conteúdo exceder */
+    max-height: 400px; /* Garante que o conteúdo não exceda a altura máxima */
+}
+
+.search-section h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #9e0000;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.search-container label {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+}
+
+.search-container input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.results-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    display: none; /* Inicialmente escondida */
+}
+
+.results-table th, 
+.results-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+.results-table th {
+    background-color: #9e0000;
+    color: white;
+    font-weight: bold;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.results-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.no-results {
+    text-align: center;
+    color: #666;
+    display: none; /* Inicialmente escondida */
+    margin-top: 20px;
+}
+
+
+    </style>
+</body>
+</html>
+
+
+

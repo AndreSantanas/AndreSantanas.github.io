@@ -1,0 +1,613 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100%; /* Garantir que o body ocupe 100% da altura */
+    overflow: hidden; /* Impede a rolagem */
+}
+
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 120px; /* Header mais fino */
+    background-color: #D91A1A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.473);
+  }
+
+  /* Parte marrom */
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 60%;
+    height: 100%;
+    background: #F2F2F2;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+  }
+
+  /* Faixa amarela no meio */
+  .secondary-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 20%;
+    height: 100%;
+    background: #F2CB05;
+    clip-path: polygon(50% 0, 100% 0, 50% 100%, 0% 100%);
+    z-index: 3;
+  }
+
+  .logo {
+    z-index: 2;
+    width: 300px; /* Aumentei o tamanho das logos */
+    height: auto;
+  }
+
+  .left-logo {
+    position: absolute;
+    left: 10px; /* Distância da borda esquerda */
+  }
+
+  .right-logo {
+    position: absolute;
+    right: 30px; /* Distância da borda direita */
+    width: 200px; /* Aumentei o tamanho das logos */
+  }
+
+
+
+/* Estilos para os botões no main */
+.main-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #800000; /* Cor vinho */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito suave de transição */
+    width: 100%; /* Os botões ocupam 100% da largura da section */
+}
+
+/* Efeito de hover para os botões */
+.main-button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Efeito de foco para os botões */
+.main-button:focus {
+    outline: none; /* Remove a borda padrão do foco */
+    box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5); /* Sombra mais intensa quando o botão está focado */
+}
+
+
+/* Estilos para a section de botões */
+.buttons-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Empilha os botões */
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    
+    /* Mantém uma altura fixa, com rolagem */
+    height: 400px; /* Altura fixa para manter a section do mesmo tamanho */
+    overflow-y: auto; /* Ativa a rolagem vertical */
+}
+
+/* Efeito de hover para os botões */
+.main-button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Animação para a expansão dos botões */
+.buttons-section {
+    transition: none; /* Remover a transição de altura para manter o tamanho fixo */
+}
+/* Estilo para o contador */
+.counter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-btn {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.counter-btn:hover {
+    background-color: #660000;
+}
+
+.counter span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.page-new .options-container {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; /* Espaço entre os quadrados na mesma linha */
+    width: 80%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: -10px auto; /* Subi o container em relação ao header */
+    position: relative; /* Torna o container posicionado em relação ao header */
+    top: -50px; /* Ajuste o valor para subir mais ou menos */
+    margin: 0 auto;
+}
+.page-new .options-container2 {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; /* Espaço entre os quadrados na mesma linha */
+    width: 850px;
+    height: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    position: relative; /* Torna o container posicionado em relação ao header */
+    top: -50px; /* Ajuste o valor para subir mais ou menos */
+    margin: 0 auto;
+}
+
+
+
+/* Ajustando os botões para que três fiquem por linha e as linhas fiquem mais próximas */
+.page-new .options-wrapper {
+    width: calc(33.33% - 40px); /* Define o tamanho dos quadrados */
+    max-width: 300px; /* Limita o tamanho dos quadrados */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -20px; /* Ajusta a margem inferior para aproximar as linhas */
+}
+.page-new .options-container3 {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: -10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    column-gap: 20px; /* Espaço entre os quadrados na mesma linha */
+    width: 850px;
+    height: 200px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    margin: 120px;
+}
+.page-new .option-button3 {
+    width: 100%;
+    height: 70px; /* Ajuste a altura conforme desejado */
+    font-size: 20px;
+    background-color: #a50b00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ajustando os botões para que três fiquem por linha e as linhas fiquem mais próximas */
+.page-new .options-wrapper3 {
+    width: calc(33.33% - 40px); /* Define o tamanho dos quadrados */
+    max-width: 300px; /* Limita o tamanho dos quadrados */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: -20px; /* Ajusta a margem inferior para aproximar as linhas */
+}
+/* Caixa para a contagem de alunos */
+.page-new .student-count {
+    margin-top: 10px; /* Mantém a distância entre o botão e a contagem */
+    font-size: 16px;
+    background-color: white;
+    border: 1px solid #920a00;
+    padding: 5px 10px;
+    border-radius: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Ajuste do tamanho dos quadrados no main */
+.page-new .option-button {
+    width: 100%;
+    height: 70px; /* Ajuste a altura conforme desejado */
+    font-size: 20px;
+    background-color: #930a00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.page-new .option-button:hover {
+    background-color: #990606;
+}
+
+/* Caixa para a contagem de alunos */
+.page-new .student-count {
+    font-size: 16px;
+    background-color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%; /* Garante que a caixa tenha a mesma largura do botão */
+    text-align: center;
+}
+
+
+
+.options-section {
+    background-color: rgba(255, 255, 255, 0.7); /* Branco semi-transparente */
+    padding: 60px; /* Aumenta o padding para expandir a seção */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 80%; /* Aumenta a largura da seção */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adiciona uma leve sombra */
+    position: relative; /* Torna o container posicionado em relação ao header */
+    top: -80px; /* Ajuste o valor para subir mais ou menos */
+    margin: 0 auto;
+}
+
+.option-button {
+    padding: 20px 40px; /* Aumenta o tamanho dos botões */
+    font-size: 20px; /* Aumenta o tamanho da fonte */
+    background-color: #8f0a00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+}
+
+.option-button:hover {
+    background-color: #ae0000;
+}
+/* Botão de menu */
+.menu-hamburguer {
+    position: absolute;
+    top: 135px; /* Ajuste a posição vertical */
+    left: 10px; /* Ajuste a posição horizontal */
+    background-color: #9c0000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 8px; /* Deixa as bordas arredondadas */
+    padding: 12px 17px; /* Tamanho do botão (interno) */
+    font-size: 25px; /* Tamanho da fonte do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Exibe o cursor de mão */
+    z-index: 998; /* Ajuste menor para ficar atrás do menu quando ele abrir */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+/* Efeito hover no botão */
+.menu-hamburguer:hover {
+    background-color: #a00000; /* Cor ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+/* Menu lateral */
+.menu {
+    width: 35%;
+    height: 100vh;
+    background-color: #cecece;
+    color: #000; /* Letras pretas no menu */
+    position: fixed;
+    top: 0;
+    left: -35%; /* Inicialmente escondido */
+    transition: left 0.3s ease;
+    z-index: 999; /* Maior para ficar acima do botão */
+}
+
+/* Menu aberto */
+.menu.open {
+    left: 0; /* Move o menu para dentro da tela */
+}
+
+/* Perfil no menu */
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.profile-img {
+    display: block;
+    width: 55px;
+    height: 55px; /* Define altura para manter formato */
+    margin-right: 1rem;
+}
+
+.profile-img img {
+    border-radius: 50%; /* Deixa a imagem arredondada */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Links do menu */
+.link-nav {
+    color: #000; /* Letras pretas */
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+.link-nav:hover {
+    background-color: #d3d3d3; /* Fundo ao passar o mouse */
+}
+/* Estilos para o footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Sombra do footer */
+    margin-top: -140px; /* Subindo o footer */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para o botão no footer */
+.footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #800000; /* Cor vinho */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito suave de transição */
+}
+
+/* Efeito de hover para o botão */
+.footer button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Efeito de foco para o botão */
+.footer button:focus {
+    outline: none; /* Remove a borda padrão do foco */
+    box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5); /* Sombra mais intensa quando o botão está focado */
+}
+
+
+/* Garantir que a página não tenha rolagem */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Impede a rolagem */
+}
+
+/* Estilos para o main */
+main {
+    background-image: url('../images/main.jpg'); /* Adicione sua imagem de fundo */
+    background-size: cover; /* A imagem cobre todo o main */
+    background-position: center; /* Centraliza a imagem */
+    padding: 20px;
+    height: 100vh; /* Ocupa toda a altura visível da janela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Impede qualquer rolagem dentro do main */
+}
+
+h1 {
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixar a fonte em negrito */
+    color: #000000; /* Cor do texto */
+    text-align: center; /* Alinhar o texto ao centro */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    margin-bottom: 10px; /* Espaço inferior para separar do conteúdo abaixo */
+    font-family: 'Arial', sans-serif; /* Fonte usada */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil no texto */
+}
+/* Estilo geral para a seção de botões */
+.buttons-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px; /* Espaçamento entre as caixas */
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Estilo para cada caixa de contador */
+.counter-box {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Largura fixa */
+    text-align: center;
+}
+
+
+/* Estilos para o calendário */
+.calendar-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 450px;
+    max-height: 1500px;
+    margin: 0 auto;
+    margin-top: -200px; /* Subindo o calendário para ficar mais próximo do header */
+    text-align: center;
+}
+
+/* Estilos para o calendário */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prev-month, .next-month {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #FF6F00;
+}
+
+.month-year {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+#calendar div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 50px;
+}
+
+#calendar .header {
+    font-weight: bold;
+    background-color: red;
+    color: white;
+}
+
+#calendar .day {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#calendar .selected-day {
+    color: red;
+    font-weight: bold;
+}
+
+.date-display {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.date-display p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos gerais para o calendário */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os dias da semana com fundo vermelho */
+#calendar .weekday {
+    background-color: rgb(129, 0, 0);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Estilo para os dias do mês */
+#calendar .day {
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+.date-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border: 2px solid #ccc; /* Borda cinza */
+    border-radius: 10px; /* Cantos arredondados */
+    padding: 10px 20px; /* Espaçamento interno */
+    margin: 0 auto 20px auto; /* Espaço inferior e centralização */
+    width: 80%; /* Largura da caixa (80% do main) */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+    position: relative; /* Garante que está no fluxo do layout */
+}
+
+.current-date {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333; /* Cor do texto */
+    margin: 0; /* Remove margens padrão */
+}
+
+.options-container {
+    margin-top: 20px; /* Espaçamento extra, se necessário */
+}
+
+
+
+
+
+
+
+
+

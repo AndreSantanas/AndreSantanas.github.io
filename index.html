@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login SESI</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/styless.css">
+
+</head>
+<body>
+  <div class="logo-container">
+    <img src="./images/sesi 2.png" alt="Logo SESI" aria-label="Logo SESI"/>
+  </div>
+  
+  <div class="box">
+    <!-- Formulário principal -->
+    <form onsubmit="validarLogin(event)">
+      <h2>Login</h2>
+      <div class="inputBox">
+        <input type="text" name="usuario" required>
+        <span>Usuário</span>
+        <i></i>
+      </div>
+      <div class="inputBox">
+        <input type="password" name="senha" required>
+        <span>Senha</span>
+        <i></i>
+      </div>
+      <div class="links">
+        <a href="#">Esqueceu a senha?</a>
+      </div>
+      <!-- Botão que valida o login -->
+      <input type="submit" value="Login">
+    </form>
+  </div>
+</body>
+<script>
+  function validarLogin(event) {
+    event.preventDefault(); // Evita o envio do formulário
+
+    // Obtém os valores dos campos de entrada
+    const usuario = document.querySelector('input[name="usuario"]').value;
+    const senha = document.querySelector('input[name="senha"]').value;
+
+    // Verifica as credenciais
+    if (usuario === "contadora@sesi" && senha === "12345") {
+      window.location.href = "calendario.html"; // Redireciona para a página da contadora
+    } else if (usuario === "nutricionista@sesi" && senha === "12345") {
+      window.location.href = "calendarioc.html"; // Redireciona para a página da nutricionista
+    } else {
+      alert("Usuário ou senha inválidos!"); // Exibe mensagem de erro
+    }
+  }
+</script>
+</html>

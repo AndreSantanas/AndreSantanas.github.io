@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contador</title>
+    <link rel="stylesheet" href="./css/styles1.css">
+</head>
+<body>
+    <header class="header">
+        <!-- Logo do lado esquerdo -->
+        <img src="images/sesi.png" alt="Logo Esquerda" class="logo left-logo">
+        
+        <!-- Faixa amarela no meio -->
+        <div class="secondary-accent-bar"></div>
+    
+        <!-- Logo do lado direito -->
+        <img src="images/menu.png" alt="Logo Direita" class="logo right-logo">
+    </header>
+
+    <main>
+        <section class="buttons-section">
+
+            <!-- Mensagem de sucesso com imagem -->
+            <div class="success-message">
+                <img src="images/concluido.gif" alt="Carregamento Concluído" class="success-image">
+                <p>Contagem realizada com sucesso!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <button onclick="window.location.href='contagem.html'">OK!</button>
+    </footer>
+
+    <script>
+        setTimeout(function() {
+            document.querySelector('.success-message').style.display = 'block'; // Exibe a mensagem de sucesso e imagem
+        }, 1000); // 3 segundos de espera
+    </script>
+</body>
+</html>

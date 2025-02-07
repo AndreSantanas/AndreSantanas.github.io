@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatórios Personalizados</title>
+    <link rel="stylesheet" href="./css/styles2.css">
+</head>
+<body>
+    <header class="header">
+        <img src="./images/sesi.png" alt="Logo Esquerda" class="logo left-logo">
+        <div class="secondary-accent-bar"></div>
+        <img src="./images/menu.png" alt="Logo Direita" class="logo right-logo">
+    </header>
+    <main>
+        <section class="report-section">
+            <h1>Relatórios Personalizados</h1>
+            <div class="buttons-container">
+                <!-- Botão 1 -->
+                <a href="https://example1.com" target="_blank">
+                    <img src="./images/word.png" alt="Relatório 1" class="button-image">
+                </a>
+                <!-- Botão 2 -->
+                <a href="https://example2.com" target="_blank">
+                    <img src="./images/pdf.png" alt="Relatório 2" class="button-image">
+                </a>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <button onclick="window.location.href='inicialc.html'">Voltar</button>
+    </footer>
+    <style>
+        /* Estilizando a seção */
+        .report-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+            width: 70%;
+            margin: 0 auto;
+            margin-top: -150px;
+            text-align: center;
+        }
+    
+        .report-section h1 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #9e0000;
+        }
+    
+        /* Contêiner de botões */
+        .buttons-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px; /* Espaçamento entre os botões */
+            margin-top: 20px;
+        }
+    
+        /* Imagens dos botões */
+        .button-image {
+            width: 150px; /* Largura fixa */
+            height: 150px; /* Altura fixa */
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 10px; /* Cantos arredondados para as imagens */
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover; /* Garante que as imagens se ajustem ao tamanho definido */
+        }
+    
+        .button-image:hover {
+            transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+        }
+    
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+        }
+    
+        .footer button {
+            background-color: #9e0000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+    
+        .footer button:hover {
+            background-color: #cc3030;
+        }
+    </style>
+    
+</body>
+</html>
