@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário</title>
+    <link rel="stylesheet" href="./css/stylec.css">
+</head>
+<body>
+
+    <header class="header">
+            <!-- Logo do lado esquerdo -->
+            <img src="images/sesi.png" alt="Logo Esquerda" class="logo left-logo">
+            
+            <!-- Faixa amarela no meio -->
+            <div class="secondary-accent-bar"></div>
+        
+            <!-- Logo do lado direito -->
+            <img src="images/menu.png" alt="Logo Direita" class="logo right-logo">
+    </header>
+
+    <main>
+        <div class="calendar-container">
+            <div class="calendar-header">
+                <button class="prev-month">←</button>
+                <span class="month-year" id="monthYear"></span>
+                <button class="next-month">→</button>
+            </div>
+            
+            <div id="calendar">
+                <div class="weekday red-background">D</div>
+                <div class="weekday red-background">S</div>
+                <div class="weekday red-background">T</div>
+                <div class="weekday red-background">Q</div>
+                <div class="weekday red-background">Q</div>
+                <div class="weekday red-background">S</div>
+                <div class="weekday red-background">S</div>
+            </div>
+            
+            <div class="date-display">
+                <p id="selectedDate">Selecione um dia</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <button onclick="window.location.href='inicialc.html'">OK!</button>
+    </footer>
+
+    <script src="./js/calendario.js"></script>
+</body>
+</html>

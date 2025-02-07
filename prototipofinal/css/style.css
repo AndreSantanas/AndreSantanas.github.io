@@ -1,0 +1,271 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100%; /* Garantir que o body ocupe 100% da altura */
+    overflow: hidden; /* Impede a rolagem */
+}
+
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Header mais fino */
+    background-color: #D91A1A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  /* Parte marrom */
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 60%;
+    height: 100%;
+    background: #F2F2F2;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+  }
+
+  /* Faixa amarela no meio */
+  .secondary-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 20%;
+    height: 100%;
+    background: #F2CB05;
+    clip-path: polygon(50% 0, 100% 0, 50% 100%, 0% 100%);
+    z-index: 3;
+  }
+
+  .logo {
+    z-index: 2;
+    width: 120px; /* Aumentei o tamanho das logos */
+    height: auto;
+  }
+
+  .left-logo {
+    position: absolute;
+    left: 10px; /* Distância da borda esquerda */
+  }
+
+  .right-logo {
+    position: absolute;
+    right: 30px; /* Distância da borda direita */
+    width: 100px; /* Aumentei o tamanho das logos */
+  }
+
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    .header {
+      height: 70px; /* Header mais fino em dispositivos móveis */
+      padding: 0 20px;
+      box-shadow: 3px 3px 5px #00000098;
+
+    }
+
+    .header::before,
+    .secondary-accent-bar {
+      height: 100px; /* Ajusta altura dos elementos */
+    }
+
+    .logo {
+      width: 150px; /* Diminui o tamanho das logos em telas menores */
+    }
+    .right-logo {
+    position: absolute;
+    right: -10px; /* Distância da borda direita */
+    width: 100px; /* Aumentei o tamanho das logos */
+  }
+    .calendar-container {
+        width: 90%;
+        margin: 20px auto;
+        padding: 10px;
+        border-radius: 8px;
+    }
+}
+
+/* Estilos para o calendário */
+.calendar-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 95%;
+    margin: 0 auto;
+    margin-top: -140px; /* Subindo o calendário para ficar mais próximo do header */
+    text-align: center;
+}
+
+/* Estilos para o calendário */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prev-month, .next-month {
+    font-size: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #FF6F00;
+}
+
+.month-year {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 20px;
+}
+
+#calendar div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    height: 30px;
+}
+
+#calendar .header {
+    font-weight: bold;
+    background-color: red;
+    color: white;
+}
+
+#calendar .day {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+#calendar .selected-day {
+    color: red;
+    font-weight: bold;
+}
+
+.date-display {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.date-display p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Estilos gerais para o calendário */
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 2px;
+    margin-bottom: 20px;
+}
+
+/* Estilo para os dias da semana com fundo vermelho */
+#calendar .weekday {
+    background-color: rgb(129, 0, 0);
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding: 5px 0;
+}
+
+/* Estilo para os dias do mês */
+#calendar .day {
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+}
+
+/* Ajustes para dispositivos móveis */
+@media (max-width: 480px) {
+    #calendar .weekday, #calendar .day {
+        font-size: 12px;
+        padding: 5px;
+    }
+}
+
+/* Estilos para o footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Sombra do footer */
+    margin-top: -140px; /* Subindo o footer */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Estilos para o botão no footer */
+.footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #800000; /* Cor vinho */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito suave de transição */
+}
+
+/* Efeito de hover para o botão */
+.footer button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Efeito de foco para o botão */
+.footer button:focus {
+    outline: none; /* Remove a borda padrão do foco */
+    box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5); /* Sombra mais intensa quando o botão está focado */
+}
+
+
+/* Garantir que a página não tenha rolagem */
+html, body {
+    height: 100%;
+    overflow: hidden; /* Impede a rolagem */
+}
+
+/* Estilos para o main */
+main {
+    background-image: url('../images/main2.jpg'); /* Adicione sua imagem de fundo */
+    background-size: cover; /* A imagem cobre todo o main */
+    background-position: center; /* Centraliza a imagem */
+    padding: 20px;
+    height: 100vh; /* Ocupa toda a altura visível da janela */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Impede qualquer rolagem dentro do main */
+}
+

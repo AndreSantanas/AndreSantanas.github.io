@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Contador</title>
+    <link rel="stylesheet" href="./css/styles1.css">
+    
+</head>
+<body>
+    <header class="header">
+        <!-- Logo do lado esquerdo -->
+        <img src="images/sesi.png" alt="Logo Esquerda" class="logo left-logo">
+        
+        <!-- Faixa amarela no meio -->
+        <div class="secondary-accent-bar"></div>
+    
+        <!-- Logo do lado direito -->
+        <img src="images/menu.png" alt="Logo Direita" class="logo right-logo">
+</header>
+
+
+    <main>
+        <div class="buttons-section">
+            <div class="counter-box">
+                <h3>Alunos</h3>
+                <div class="counter">
+                    <button class="control-btn" id="decrease-students">-</button>
+                    <span id="student-count">32</span>
+                    <button class="control-btn" id="increase-students">+</button>
+                </div>
+            </div>
+
+            <div class="counter-box">
+                <h3>TRI</h3>
+                <div class="counter">
+                    <button class="control-btn" id="decrease-tri">-</button>
+                    <span id="tri-count">1</span>
+                    <button class="control-btn" id="increase-tri">+</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <button onclick="window.location.href='realizado.html'">OK!</button>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

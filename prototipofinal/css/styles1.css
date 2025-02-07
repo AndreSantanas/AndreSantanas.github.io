@@ -1,0 +1,639 @@
+/* Reset de margem e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para o corpo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    overflow: hidden; /* Garantir que não tenha rolagem */
+    height: 100vh; /* Definir altura fixa da página */
+}
+
+.header {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Header mais fino */
+    background-color: #D91A1A;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 50px;
+    overflow: hidden;
+    transition: height 0.3s ease;
+  }
+
+  /* Parte marrom */
+  .header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 60%;
+    height: 100%;
+    background: #F2F2F2;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 1;
+  }
+
+  /* Faixa amarela no meio */
+  .secondary-accent-bar {
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 20%;
+    height: 100%;
+    background: #F2CB05;
+    clip-path: polygon(50% 0, 100% 0, 50% 100%, 0% 100%);
+    z-index: 3;
+  }
+
+  .logo {
+    z-index: 2;
+    width: 120px; /* Aumentei o tamanho das logos */
+    height: auto;
+  }
+
+  .left-logo {
+    position: absolute;
+    left: 10px; /* Distância da borda esquerda */
+  }
+
+  .right-logo {
+    position: absolute;
+    right: 30px; /* Distância da borda direita */
+    width: 100px; /* Aumentei o tamanho das logos */
+  }
+
+  /* Responsividade para dispositivos móveis */
+  @media (max-width: 768px) {
+    .header {
+      height: 70px; /* Header mais fino em dispositivos móveis */
+      padding: 0 20px;
+      box-shadow: 3px 3px 5px #00000098;
+
+    }
+
+    .header::before,
+    .secondary-accent-bar {
+      height: 100px; /* Ajusta altura dos elementos */
+    }
+
+    .logo {
+      width: 150px; /* Diminui o tamanho das logos em telas menores */
+    }
+    .right-logo {
+    position: absolute;
+    right: -10px; /* Distância da borda direita */
+    width: 100px; /* Aumentei o tamanho das logos */
+  }
+  }
+/* Estilos para o main */
+main {
+    background-image: url('../images/main2.jpg'); /* Adicione sua imagem de fundo */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 120px); /* Ajuste da altura para o main */
+}
+.buttons-section {
+    display: block; /* Comportamento padrão de bloco */
+    width: 100%; /* Largura total */
+    margin-bottom: 20px; /* Espaço entre as seções */
+}
+.buttons-section:first-of-type {
+    margin-top: 20px; /* Espaço superior */
+}
+.buttons-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Empilha os botões */
+    align-items: center;
+    gap: 20px;
+    width: 80%;
+    max-width: 400px;
+    
+    /* Limita a altura e permite rolagem */
+    max-height: 330px; /* Defina a altura máxima desejada */
+    overflow-y: auto; /* Ativa a rolagem vertical */
+}
+
+/* Estilos para os botões no main */
+.main-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #800000; /* Cor vinho */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito suave de transição */
+    width: 100%; /* Os botões ocupam 100% da largura da section */
+}
+
+/* Efeito de hover para os botões */
+.main-button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Efeito de foco para os botões */
+.main-button:focus {
+    outline: none; /* Remove a borda padrão do foco */
+    box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5); /* Sombra mais intensa quando o botão está focado */
+}
+
+
+
+@media (max-width: 480px) {
+    .text-section h2 {
+        font-size: 20px;
+    }
+
+    .text-section h1 {
+        font-size: 14px;
+    }
+
+    .buttons-section {
+        width: 90%;
+        padding: 15px;
+        border: #ffff00 solid 2px;
+    }
+
+    .main-button {
+        font-size: 14px; /* Tamanho do botão ainda menor */
+        padding: 10px 20px;
+        width: 200px;
+    }
+    /* Estilo para a caixa que aparece ao clicar no botão */
+.info-box {
+    display: none; /* A caixa fica oculta até o botão ser clicado */
+    position: absolute;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    margin-top: 10px;
+    z-index: 10;
+}
+
+/* Texto da quantidade de alunos */
+.student-count {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Estilo para o botão "Alterar Contagem" */
+.alter-button {
+    padding: 6px 12px;
+    background-color: #9e0000; /* Cor laranja */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.alter-button:hover {
+    background-color: #cc0000; /* Cor mais escura no hover */
+}
+
+}
+/* CSS para a .info-box */
+.info-box {
+    display: none; /* Esconde a caixa inicialmente */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: absolute;
+    width: 150px;
+    text-align: center;
+    transform: translateX(-50%); /* Centraliza a caixa abaixo do botão */
+}
+
+.info-box .student-count {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.update-count-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    color: white;
+    background-color: #800000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-count-btn:hover {
+    background-color: #660000;
+}
+/* CSS para a .info-box */
+.info-box {
+    display: none; /* Esconde a caixa inicialmente */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-50%); /* Centraliza a caixa abaixo do botão */
+}
+
+.info-box .student-count {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.info-box .tri-code {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.info-box .update-count-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    color: white;
+    background-color: #800000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-count-btn:hover {
+    background-color: #660000;
+}
+
+/* Animação para a expansão dos botões */
+.buttons-section {
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.expanded {
+    height: 200px; /* Ajuste a altura conforme necessário */
+}
+
+
+/* CSS para a .info-box */
+.info-box {
+    display: none; /* Esconde a caixa inicialmente */
+    background-color: white;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 10px;
+    position: absolute;
+    width: 200px;
+    text-align: center;
+    transform: translateX(-50%); /* Centraliza a caixa abaixo do botão */
+}
+
+.info-box .student-count,
+.info-box .tri-code {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Animação para a expansão dos botões */
+.buttons-section {
+    transition: height 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.expanded {
+    height: 200px; /* Ajuste a altura conforme necessário */
+}
+
+/* Ajustando o botão "Alterar Contagem" */
+.update-count-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    color: white;
+    background-color: #800000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.update-count-btn:hover {
+    background-color: #660000;
+}
+/* Estilos para a section de botões */
+.buttons-section {
+    background-color: rgba(255, 255, 255, 0.8); /* Fundo semi-transparente */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    padding: 30px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column; /* Empilha os botões */
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    
+    /* Mantém uma altura fixa, com rolagem */
+    height: 400px; /* Altura fixa para manter a section do mesmo tamanho */
+    overflow-y: auto; /* Ativa a rolagem vertical */
+}
+
+/* Efeito de hover para os botões */
+.main-button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Animação para a expansão dos botões */
+.buttons-section {
+    transition: none; /* Remover a transição de altura para manter o tamanho fixo */
+}
+/* Estilo para o contador */
+.counter-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.counter-btn {
+    background-color: #800000;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.counter-btn:hover {
+    background-color: #660000;
+}
+
+.counter span {
+    font-size: 24px;
+    font-weight: bold;
+}
+/* Botão de menu */
+.menu-hamburguer {
+    position: absolute;
+    top: 80px; /* Ajuste a posição vertical */
+    left: 10px; /* Ajuste a posição horizontal */
+    background-color: #9c0000; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda */
+    border-radius: 8px; /* Deixa as bordas arredondadas */
+    padding: 6px 10px; /* Tamanho do botão (interno) */
+    font-size: 20px; /* Tamanho da fonte do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Exibe o cursor de mão */
+    z-index: 998; /* Ajuste menor para ficar atrás do menu quando ele abrir */
+    box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona uma sombra */
+}
+
+/* Efeito hover no botão */
+.menu-hamburguer:hover {
+    background-color: #a00000; /* Cor ao passar o mouse */
+    color: #fff; /* Cor do texto ao passar o mouse */
+}
+
+/* Menu lateral */
+.menu {
+    width: 65%;
+    height: 100vh;
+    background-color: #cecece;
+    color: #000; /* Letras pretas no menu */
+    position: fixed;
+    top: 0;
+    left: -65%; /* Inicialmente escondido */
+    transition: left 0.3s ease;
+    z-index: 999; /* Maior para ficar acima do botão */
+}
+
+/* Menu aberto */
+.menu.open {
+    left: 0; /* Move o menu para dentro da tela */
+}
+
+/* Perfil no menu */
+.profile {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+}
+
+.profile-img {
+    display: block;
+    width: 55px;
+    height: 55px; /* Define altura para manter formato */
+    margin-right: 1rem;
+}
+
+.profile-img img {
+    border-radius: 50%; /* Deixa a imagem arredondada */
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Links do menu */
+.link-nav {
+    color: #000; /* Letras pretas */
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+}
+
+.link-nav:hover {
+    background-color: #d3d3d3; /* Fundo ao passar o mouse */
+}
+/* Estilos para o botão no footer */
+.footer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #800000; /* Cor vinho */
+    color: white; /* Cor do texto */
+    border: none; /* Sem borda */
+    border-radius: 5px; /* Bordas arredondadas */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s, transform 0.3s; /* Efeito suave de transição */
+}
+
+/* Efeito de hover para o botão */
+.footer button:hover {
+    background-color: #660000; /* Cor vinho mais escura no hover */
+    transform: translateY(-3px); /* Levanta o botão ao passar o mouse */
+}
+
+/* Efeito de foco para o botão */
+.footer button:focus {
+    outline: none; /* Remove a borda padrão do foco */
+    box-shadow: 0px 0px 8px rgba(128, 0, 0, 0.5); /* Sombra mais intensa quando o botão está focado */
+}
+
+/* Estilos para o footer */
+.footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #f8f8f8;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.1); /* Sombra do footer */
+    margin-top: -140px; /* Subindo o footer */
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+h1 {
+    font-size: 15px; /* Tamanho da fonte */
+    font-weight: bold; /* Deixar a fonte em negrito */
+    color: #000000; /* Cor do texto */
+    text-align: center; /* Alinhar o texto ao centro */
+    letter-spacing: 1px; /* Espaçamento entre as letras */
+    margin-bottom: 10px; /* Espaço inferior para separar do conteúdo abaixo */
+    font-family: 'Arial', sans-serif; /* Fonte usada */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil no texto */
+}
+/* Estilo geral para a seção de botões */
+.buttons-section {
+    display: flex;
+    justify-content: space-around;
+    gap: 10px; /* Espaçamento entre as caixas */
+    margin-top: 50px;
+    padding: 20px;
+}
+
+/* Estilo para cada caixa de contador */
+.counter-box {
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Largura fixa */
+    text-align: center;
+    border: 2px solid #9c0000;
+}
+
+/* Título do contador */
+.counter-box h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* Contador (botões e números) */
+.counter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Estilo para os botões de controle */
+.control-btn {
+    background-color: #bb0000;
+    color: #fff;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+/* Efeito de hover nos botões */
+.control-btn:hover {
+    background-color: #970000;
+}
+
+/* Estilo para o número do contador */
+#student-count, #tri-count {
+    font-size: 32px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+
+/* Contêiner de carregamento */
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0px;
+    text-align: center;
+}
+
+.loading-icon {
+    width: 60px; 
+    height: 60px;
+    border: 6px solid #c40000;
+    border-top: 6px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+.loading-text {
+    font-size: 20px;
+    color: #a80000;
+    margin-top: 10px;
+}
+
+/* Mensagem de sucesso */
+.success-message {
+    display: none;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success-image {
+    width: 150px; /* Aumenta o tamanho da imagem */
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.success-message p {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000000;
+    margin-top: 0px;
+}
+
